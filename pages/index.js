@@ -1,18 +1,33 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <div className="container">
+      {/* Hero Section */}
       <section style={styles.hero}>
-        <img src="/logo.png" alt="Halal Coin Logo" style={styles.heroLogo} />
+        <Image
+          src="/logo.png"
+          alt="Halal Coin Logo"
+          width={80}
+          height={80}
+          style={styles.heroLogo}
+        />
         <h1 style={styles.headline}>Halal Coin</h1>
         <p style={styles.subtext}>
           The first Sharia-compliant blockchain token for ethical investing.
         </p>
         <div style={styles.buttonRow}>
-          <a href="/whitepaper" style={styles.primaryButton}>Read Whitepaper</a>
-          <a href="/about" style={styles.secondaryButton}>Learn More</a>
+          <Link href="/whitepaper">
+            <a style={styles.primaryButton}>Read Whitepaper</a>
+          </Link>
+          <Link href="/about">
+            <a style={styles.secondaryButton}>Learn More</a>
+          </Link>
         </div>
       </section>
 
+      {/* Features Section */}
       <section style={styles.features}>
         <h2 style={styles.sectionTitle}>Why Halal Coin?</h2>
         <ul style={styles.featureList}>
@@ -20,6 +35,17 @@ export default function Home() {
           <li><strong>✓ Sharia-Compliant:</strong> Built with Islamic finance principles.</li>
           <li><strong>✓ Ethical Investing:</strong> Real-world impact, not speculation.</li>
         </ul>
+      </section>
+
+      {/* Call to Action Section */}
+      <section style={styles.cta}>
+        <h2 style={styles.ctaTitle}>Join the Halal Investment Movement</h2>
+        <p style={styles.ctaText}>
+          Be among the first to access our ethical, Sharia-compliant investment platform.
+        </p>
+        <Link href="/whitepaper">
+          <a style={styles.ctaButton}>Explore the Whitepaper</a>
+        </Link>
       </section>
     </div>
   );
@@ -31,7 +57,6 @@ const styles = {
     textAlign: 'center',
   },
   heroLogo: {
-    width: '80px',
     marginBottom: '1rem',
   },
   headline: {
@@ -74,6 +99,7 @@ const styles = {
   sectionTitle: {
     fontSize: '1.75rem',
     marginBottom: '1rem',
+    textAlign: 'center',
   },
   featureList: {
     listStyle: 'none',
@@ -83,5 +109,29 @@ const styles = {
     textAlign: 'left',
     maxWidth: '600px',
     margin: '0 auto',
+  },
+  cta: {
+    backgroundColor: '#222',
+    color: '#fff',
+    textAlign: 'center',
+    padding: '3rem 1rem',
+    marginTop: '4rem',
+    borderRadius: '8px',
+  },
+  ctaTitle: {
+    fontSize: '2rem',
+    marginBottom: '1rem',
+  },
+  ctaText: {
+    fontSize: '1.1rem',
+    marginBottom: '2rem',
+  },
+  ctaButton: {
+    backgroundColor: '#fff',
+    color: '#222',
+    padding: '0.75rem 1.5rem',
+    textDecoration: 'none',
+    fontWeight: 'bold',
+    borderRadius: '6px',
   },
 };
