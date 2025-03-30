@@ -1,6 +1,6 @@
 export default function About() {
     return (
-      <div style={styles.container}>
+      <div className="container">
         <h1 style={styles.heading}>About Halal Coin</h1>
   
         <section style={styles.section}>
@@ -13,7 +13,7 @@ export default function About() {
         <section style={styles.section}>
           <h2 style={styles.subheading}>Our Story</h2>
           <p>
-            We started Halal Coin with a simple idea: ethical investing shouldn't be an afterthought. With the rise of
+            We started Halal Coin with a simple idea: ethical investing shouldn&apos;t be an afterthought. With the rise of
             decentralized finance, we saw an opportunity to offer a financial solution that prioritizes integrity and impact.
           </p>
         </section>
