@@ -18,10 +18,11 @@ export default function Home() {
           The first Sharia-compliant blockchain token for ethical investing.
         </p>
         <div style={styles.buttonRow}>
-          <Link href="/whitepaper">
+          {/* ✅ LegacyBehavior FIXED */}
+          <Link href="/whitepaper" legacyBehavior>
             <a style={styles.primaryButton}>Read Whitepaper</a>
           </Link>
-          <Link href="/about">
+          <Link href="/about" legacyBehavior>
             <a style={styles.secondaryButton}>Learn More</a>
           </Link>
         </div>
@@ -43,9 +44,16 @@ export default function Home() {
         <p style={styles.ctaText}>
           Be among the first to access our ethical, Sharia-compliant investment platform.
         </p>
-        <Link href="/whitepaper">
-          <a style={styles.ctaButton}>Explore the Whitepaper</a>
-        </Link>
+
+        {/* 💧 Buy HCIT on Uniswap Button */}
+        <a
+          href="https://app.uniswap.org/#/swap?outputCurrency=0x6C622863aAFf919Ef36FFAb46229Ab63F3E3c5A7&chain=mainnet"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={styles.buyButton}
+        >
+          💧 Buy HCIT on Uniswap
+        </a>
       </section>
     </div>
   );
@@ -126,12 +134,18 @@ const styles = {
     fontSize: '1.1rem',
     marginBottom: '2rem',
   },
-  ctaButton: {
-    backgroundColor: '#fff',
-    color: '#222',
+  buyButton: {
+    marginTop: '1.5rem',
+    display: 'inline-block',
     padding: '0.75rem 1.5rem',
-    textDecoration: 'none',
+    backgroundColor: '#00b894',
+    color: '#fff',
+    fontSize: '1rem',
     fontWeight: 'bold',
+    border: 'none',
     borderRadius: '6px',
+    textDecoration: 'none',
+    cursor: 'pointer',
+    boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
   },
 };

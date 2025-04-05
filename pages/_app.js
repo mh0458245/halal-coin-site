@@ -1,50 +1,43 @@
 import '../styles/globals.css';
 import Navbar from '../components/Navbar';
-import { useEffect, useState } from 'react';
+import Footer from '../components/Footer';
+import Link from 'next/link';
 
 export default function App({ Component, pageProps }) {
-  const [showScroll, setShowScroll] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowScroll(window.scrollY > 300);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <>
+    <div style={styles.wrapper}>
       <Navbar />
-      <Component {...pageProps} />
-      {showScroll && (
-        <button onClick={scrollToTop} style={styles.backToTop}>
-          ⬆️ Top
-        </button>
-      )}
-    </>
+      <main style={styles.mainContent}>
+        <Component {...pageProps} />
+        <div style={styles.roadmapLinkContainer}>
+          <Link href="/roadmap" legacyBehavior>
+            <a style={styles.roadmapLink}>📍 Roadmap & FAQ</a>
+          </Link>
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 }
 
 const styles = {
-  backToTop: {
-    position: 'fixed',
-    bottom: '30px',
-    right: '30px',
-    padding: '10px 16px',
-    fontSize: '16px',
-    borderRadius: '6px',
-    backgroundColor: '#222',
-    color: 'white',
-    border: 'none',
-    cursor: 'pointer',
-    boxShadow: '0 2px 8px rgba(0, 0, 0, 0.3)',
-    zIndex: 999,
-    transition: 'opacity 0.3s ease',
+  wrapper: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+  },
+  mainContent: {
+    flex: 1,
+    position: 'relative',
+  },
+  roadmapLinkContainer: {
+    marginTop: '2rem',
+    textAlign: 'center',
+  },
+  roadmapLink: {
+    textDecoration: 'none',
+    color: '#00b894',
+    fontWeight: 'bold',
+    fontSize: '1rem',
   },
 };
