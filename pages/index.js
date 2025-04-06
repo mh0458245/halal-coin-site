@@ -18,7 +18,6 @@ export default function Home() {
           The first Sharia-compliant blockchain token for ethical investing.
         </p>
         <div style={styles.buttonRow}>
-          {/* ✅ LegacyBehavior FIXED */}
           <Link href="/whitepaper" legacyBehavior>
             <a style={styles.primaryButton}>Read Whitepaper</a>
           </Link>
@@ -47,7 +46,7 @@ export default function Home() {
 
         {/* 💧 Buy HCIT on Uniswap Button */}
         <a
-          href="https://app.uniswap.org/#/swap?outputCurrency=0x6C622863aAFf919Ef36FFAb46229Ab63F3E3c5A7&chain=mainnet"
+          href="https://app.uniswap.org/#/swap?outputCurrency=0x17B442886E8b85b009fe0C02238149c34516Fc6E&chain=mainnet"
           target="_blank"
           rel="noopener noreferrer"
           style={styles.buyButton}
