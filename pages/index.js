@@ -46,7 +46,7 @@ export default function Home() {
 
         {/* 💧 Buy HCIT on Uniswap Button */}
         <a
-          href="https://app.uniswap.org/#/swap?outputCurrency=0x17B442886E8b85b009fe0C02238149c34516Fc6E&chain=mainnet"
+          href="https://app.uniswap.org/#/swap?outputCurrency=0x251CB85b58821Ec2EF905e36Ff30dd0EB4564Ea5&chain=mainnet"
           target="_blank"
           rel="noopener noreferrer"
           style={styles.buyButton}
